@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CardList from './CardList';
+import Searchbox from './Searchbox';
+import { countries } from './countries';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      countries: countries,
+      searchfield: ''
+    }
+  }
+
+  // Without the arrow function if we simply do = value of this here is referring to the component the even handler is attached to which in <input>
+  onSearchChange = (event) => {
+    this.setState({ searchfield: event.target.value });
+  }
+
+
   render() {
+    const filteredCountries = this.state.countries.filter(country => {
+      return country.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+    })
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='tc'>
+        <h1>Country Report</h1>
+        <Searchbox searchChange={this.onSearchChange}/>
+        <CardList countries={filteredCountries} />
       </div>
     );
   }
+
 }
 
 export default App;

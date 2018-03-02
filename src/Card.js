@@ -6,7 +6,7 @@ const Card = (props) => {
 
   return (
     <div id='cardCont' className='bg-light-blue dib br3 pa3 ma2 grow bw2 shadow-3'>
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <img src={flag} alt='flag'/>
       <div>
         <p>Capital: {capital}</p>

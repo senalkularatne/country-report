@@ -1,0 +1,14 @@
+/*https://www.fontsquirrel.com) */
+@font-face {
+    font-family: 'impossibleregular';
+    src: url('impossible-webfont.woff2') format('woff2'),
+         url('impossible-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+  font-family: 'impossibleregular';
+  font-weight: 200;
+  color: white;
+}

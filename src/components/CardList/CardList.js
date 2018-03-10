@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card';
+import Card from '../Card/Card';
 
 // countries object is received as a prop
 const CardList = ({ countries }) => {

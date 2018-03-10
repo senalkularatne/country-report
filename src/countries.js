@@ -1,3 +1,4 @@
+// This is just a backup in case the API fails
 export const countries = [
   {
     currencies: [

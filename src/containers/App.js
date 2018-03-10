@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import Searchbox from './Searchbox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList/CardList';
+import SearchBox from '../components/SearchBox/SearchBox';
+import Scroll from '../components/Scroll/Scroll';
 import './App.css';
 
 class App extends Component {
@@ -26,8 +26,9 @@ class App extends Component {
 
   render() {
 
-    const filteredCountries = this.state.countries.filter(country => {
-      return country.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+    const { countries, searchfield } = this.state;
+    const filteredCountries = countries.filter(country => {
+      return country.name.toLowerCase().includes(searchfield.toLowerCase());
     })
 
     if (this.state.countries.length === 0) {
@@ -36,7 +37,7 @@ class App extends Component {
       return (
         <div className='tc'>
           <h1 className='f-headline lh-solid'>Country Report</h1>
-          <Searchbox searchChange={this.onSearchChange}/>
+          <SearchBox searchChange={this.onSearchChange}/>
           <Scroll>
             <CardList countries={filteredCountries} />
           </Scroll>

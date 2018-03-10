@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 
-// countries object is received as a prop
+// countries object is received as a prop and destructured
 const CardList = ({ countries }) => {
   // inside <div>...</div>, loop over the country objects and map
   // each object as <Card /> attributes

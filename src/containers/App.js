@@ -25,13 +25,12 @@ class App extends Component {
   }
 
   render() {
-
     const { countries, searchfield } = this.state;
     const filteredCountries = countries.filter(country => {
       return country.name.toLowerCase().includes(searchfield.toLowerCase());
     })
 
-    if (this.state.countries.length === 0) {
+    if (countries.length === 0) {
       return <h1>Loading...</h1>
     } else {
       return (
@@ -44,7 +43,6 @@ class App extends Component {
         </div>
       );
     }
-
   }
 
 }
